@@ -19,7 +19,7 @@ the slides can be accessed [here](https://drive.google.com/file/d/1jCc60A6hyuYjB
 _A grosso modo_, we construct the spatial priors based on observations from low-resolution imaging modalities. For instance, we use pictures from post-mortem symptoms of a stroke.
 
 <p align="center">
-<img src="doc_img/sketch02_v2.png" width="600" height="178">
+<img src="doc_img/Pregions02.png" src-dark="doc_img/Pregions01.png" width="800" height="160">
 </p>
 
 # Brainstorm Implementation
@@ -60,7 +60,7 @@ Once the data is already in the database, the algorithms provided here can be ru
 5. Multiple options are available for selection, such as the heuristic for hyperparameter tuning.
 
 <p align="center">
-<img src="doc_img/Brainstorm_instructions_01.png" src-dark="doc_img/Brainstorm_instructions_01.png" width="400" height="456">
+<img src="doc_img/Brainstorm_instructions_02.png" src-dark="doc_img/Brainstorm_instructions_01.png" width="400" height="456">
 </p>
 
 The results will be saved to the database as any other Source Reconstruction method mentioned in the tutorials.

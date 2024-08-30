@@ -12,27 +12,29 @@ Furthermore, the methodology developed in my PhD dissertation can be extended to
 
 The interested reader may refer to [my dissertation](https://mavmatrix.uta.edu/math_dissertations/162/). 
 The presentation was recorded, and it is available [here](https://drive.google.com/file/d/1jC29LfYxnKniUrf4qTJaTYbJNPSoyBz7/view?usp=sharing); 
-the slides can be accessed [https://drive.google.com/file/d/1jCc60A6hyuYjBBVgBPFIjxB2DwLOZxNE/view?usp=sharing](here).
+the slides can be accessed (here)[https://drive.google.com/file/d/1jCc60A6hyuYjBBVgBPFIjxB2DwLOZxNE/view?usp=sharing].
 
 ## Algorithm Summary
 
 _A grosso modo_, we construct the spatial priors based on observations from low-resolution imaging modalities. For instance, we use pictures from post-mortem symptoms of a stroke.
 
+<p align="center">
 <img src="doc_img/sketch02_v2.png" width="600" height="178">
+</p>
 
 # Brainstorm Implementation
 
-Brainstorm is a Matlab toolbox for analyzing brain recordings, including, but not limited to, MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data and OPENMEEG for solving the forward problems of EEG vs. electrical dipoles.
+(Brainstorm)[https://neuroimage.usc.edu/brainstorm/Introduction] is a Matlab toolbox for analyzing brain recordings, including, but not limited to, MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data and OPENMEEG for solving the forward problems of EEG vs. electrical dipoles.
 
 # Setup
 
-To run these scripts, you need a working installation of [Brainstorm](https://neuroimage.usc.edu/brainstorm/Installation). 
+To run these scripts, you need a working installation of Brainstorm. This can be achieved by following the [official tutorial](https://neuroimage.usc.edu/brainstorm/Installation). 
 
-To **install** the algorithm into your local Brainstorm, do as follows:
+To **install** the proposed algorithm into your local Brainstorm, do as follows:
 
-1. Note the folder `~/.brainstorm/process`, designated for user-defined processes. 
+1. Note the folder `~/.brainstorm/process`, which is designated for user-defined processes. 
 
-2. Go to this repository's `Brainstorm' folder and download `process_RegionPriors.m'.
+2. Go to this repository's `Brainstorm` folder and download `process_RegionPriors.m`.
 
 3. Download the file `process_(...).m` and move it to `~/.brainstorm/process`
 
@@ -57,7 +59,15 @@ Once the data is already in the database, the algorithms provided here can be ru
 
 5. Multiple options are available for selection, such as the heuristic for hyperparameter tuning.
 
+<picture align="center">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_01.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_02.png">
+</picture>
+
+
+<p align="center">
 <img src="doc_img/Brainstorm_instructions_02.png" width="400" height="456">
+</p>
 
 The results will be saved to the database as any other Source Reconstruction method mentioned in the tutorials.
 

@@ -27,11 +27,6 @@ srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions02
 width="800" height="214" align="center">
 </picture>
 
-
-<p align="center">
-<img src="doc_img/Pregions02.png" src-dark="doc_img/Pregions01.png" width="800" height="214">
-</p>
-
 # Brainstorm Implementation
 
 [Brainstorm](https://neuroimage.usc.edu/brainstorm/Introduction) is a Matlab toolbox for analyzing brain recordings, including, but not limited to, MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data and OPENMEEG for solving the forward problems of EEG vs. electrical dipoles.
@@ -69,9 +64,14 @@ Once the data is already in the database, the algorithms provided here can be ru
 
 5. Multiple options are available for selection, such as the heuristic for hyperparameter tuning.
 
-<p align="center">
-<img src="doc_img/Brainstorm_instructions_02.png" src-dark="doc_img/Brainstorm_instructions_01.png" width="400" height="456">
-</p>
+<picture>
+ <source media="(prefers-color-scheme: dark)" 
+srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_01.png?raw=true">
+ <source media="(prefers-color-scheme: light)" 
+srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_02.png?raw=true">
+ <img alt="Steps to access the proposed method in the Brainstorm GUI." src="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_02.png?raw=true"
+width="400" height="456" align="center">
+</picture>
 
 The results will be saved to the database as any other Source Reconstruction method mentioned in the tutorials.
 

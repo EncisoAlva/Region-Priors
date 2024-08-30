@@ -18,12 +18,13 @@ the slides can be accessed [here](https://drive.google.com/file/d/1jCc60A6hyuYjB
 
 _A grosso modo_, we construct the spatial priors based on observations from low-resolution imaging modalities. For instance, we use pictures from post-mortem symptoms of a stroke.
 
-<picture align="center">
+<picture>
  <source media="(prefers-color-scheme: dark)" 
 srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions01.png?raw=true">
  <source media="(prefers-color-scheme: light)" 
 srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions02.png?raw=true">
- <img alt="Binary Anatomical Priors are encoded as P-regions. In this example, P-regions are constructed from stain with Tetrazolium chlorine, which reveals hypoxic tissues." src="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions01.png?raw=true">
+ <img alt="Binary Anatomical Priors are encoded as P-regions. In this example, P-regions are constructed from stain with Tetrazolium chlorine, which reveals hypoxic tissues." src="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions02.png?raw=true"
+width="800" height="214" align="center">
 </picture>
 
 

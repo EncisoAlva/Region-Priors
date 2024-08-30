@@ -18,8 +18,16 @@ the slides can be accessed [here](https://drive.google.com/file/d/1jCc60A6hyuYjB
 
 _A grosso modo_, we construct the spatial priors based on observations from low-resolution imaging modalities. For instance, we use pictures from post-mortem symptoms of a stroke.
 
+<picture align="center">
+ <source media="(prefers-color-scheme: dark)" 
+srcset="https://github.com/EncisoAlva/EncisoAlva.github.io/blob/main/doc_img/Pregions01.png?raw=true">
+ <source media="(prefers-color-scheme: light)" srcset="https://github.com/EncisoAlva/EncisoAlva.github.io/blob/main/doc_img/Pregions02.png?raw=true">
+ <img alt="Binary Anatomical Priors are encoded as P-regions. In this example, P-regions are constructed from stain with Tetrazolium chlorine, which reveal hypoxic tissues." src="https://github.com/EncisoAlva/EncisoAlva.github.io/blob/main/doc_img/Pregions01.png?raw=true">
+</picture>
+
+
 <p align="center">
-<img src="doc_img/Pregions02.png" src-dark="doc_img/Pregions01.png" width="800" height="160">
+<img src="doc_img/Pregions02.png" src-dark="doc_img/Pregions01.png" width="800" height="214">
 </p>
 
 # Brainstorm Implementation
@@ -28,7 +36,7 @@ _A grosso modo_, we construct the spatial priors based on observations from low-
 
 ## Setup
 
-To run these scripts, you need a working installation of Brainstorm. This can be achieved by following the [official tutorial](https://neuroimage.usc.edu/brainstorm/Installation). 
+To run these scripts, you need to install Brainstorm. This can be achieved by following the [official tutorial](https://neuroimage.usc.edu/brainstorm/Installation). 
 
 To **install** the proposed algorithm into your local Brainstorm, do as follows:
 

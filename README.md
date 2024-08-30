@@ -20,9 +20,10 @@ _A grosso modo_, we construct the spatial priors based on observations from low-
 
 <picture align="center">
  <source media="(prefers-color-scheme: dark)" 
-srcset="https://github.com/EncisoAlva/EncisoAlva.github.io/blob/main/doc_img/Pregions01.png?raw=true">
- <source media="(prefers-color-scheme: light)" srcset="https://github.com/EncisoAlva/EncisoAlva.github.io/blob/main/doc_img/Pregions02.png?raw=true">
- <img alt="Binary Anatomical Priors are encoded as P-regions. In this example, P-regions are constructed from stain with Tetrazolium chlorine, which reveal hypoxic tissues." src="https://github.com/EncisoAlva/EncisoAlva.github.io/blob/main/doc_img/Pregions01.png?raw=true">
+srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions01.png?raw=true">
+ <source media="(prefers-color-scheme: light)" 
+srcset="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions02.png?raw=true">
+ <img alt="Binary Anatomical Priors are encoded as P-regions. In this example, P-regions are constructed from stain with Tetrazolium chlorine, which reveals hypoxic tissues." src="https://github.com/EncisoAlva/Region-Priors/blob/main/doc_img/Pregions01.png?raw=true">
 </picture>
 
 

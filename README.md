@@ -59,14 +59,8 @@ Once the data is already in the database, the algorithms provided here can be ru
 
 5. Multiple options are available for selection, such as the heuristic for hyperparameter tuning.
 
-<picture align="center">
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_01.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EncisoAlva/Region-Priors/blob/main/doc_img/Brainstorm_instructions_02.png">
-</picture>
-
-
 <p align="center">
-<img src="doc_img/Brainstorm_instructions_02.png" width="400" height="456">
+<img src="doc_img/Brainstorm_instructions_01.png" src-dark="doc_img/Brainstorm_instructions_01.png" width="400" height="456">
 </p>
 
 The results will be saved to the database as any other Source Reconstruction method mentioned in the tutorials.

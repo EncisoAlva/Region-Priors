@@ -51,11 +51,11 @@ Once the data is already in the database, the algorithms provided here can be ru
 
 1. Select the sensor data and drag it to the `Run' section.
 
-2. Select the `Run' button to open the Pipeline editor.
+2. Select the `Run` button to open the Pipeline editor.
 
 3. Use the cog to open the menu of processes.
 
-4. Navigate to `Sources / Binary Region Priors'.
+4. Navigate to `Sources / Binary Region Priors`.
 
 5. Multiple options are available for selection, such as the heuristic for hyperparameter tuning.
 

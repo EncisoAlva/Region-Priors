@@ -26,7 +26,7 @@ _A grosso modo_, we construct the spatial priors based on observations from low-
 
 [Brainstorm](https://neuroimage.usc.edu/brainstorm/Introduction) is a Matlab toolbox for analyzing brain recordings, including, but not limited to, MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data and OPENMEEG for solving the forward problems of EEG vs. electrical dipoles.
 
-# Setup
+## Setup
 
 To run these scripts, you need a working installation of Brainstorm. This can be achieved by following the [official tutorial](https://neuroimage.usc.edu/brainstorm/Installation). 
 
@@ -66,3 +66,33 @@ Once the data is already in the database, the algorithms provided here can be ru
 The results will be saved to the database as any other Source Reconstruction method mentioned in the tutorials.
 
 Double-click on it on the new file **and** the sensor data to explore visually the sources as they evolve in time.
+
+# Measurement of Algorithm Performance
+
+Unlike the Brainstorm implementation, the performance metrics were not designed with the final user in mind. Instead, they are designed to make it easier to implement different types of synthetic data, hyperparameter tuning heuristics, ESI solvers, performance metrics, and posterior analysis.
+
+They are available to the public, hoping that future work can be implemented faster.
+
+## Setup
+
+1. Download the contents of the `Pure Matlab` folder. Although this folder can be renamed safely, it will be referred to as such for ease of notation.
+
+2. Inside the `Pure Matlab` folder, create a folder named `data`.
+
+3. Download the folder `anat_ref` from [this link](https://drive.google.com/drive/folders/1bwrJiAwzQgX9c09XAP01Bx7J5I7iN4oC?usp=sharing) and copy it inside the `Pure Matlab` folder. This folder was excluded from the repository because it included large files.
+
+### Including more anatomy models
+
+The folder `anat_ref` contains anatomical data from the ICBM152 template and two head models made from (1) sources at the cortex whose orientation is orthogonal to it and (2) approximately 5,000 dipoles on the brain volume with free orientation.
+
+- If you have anatomical data already loaded into the Brainstorm database, export the head and cortex surfaces to the Matlab workspace as `cortex` and `head`, respectively. Save both variables into a single file in the `anat_ref` folder.
+
+- If you have the head model already loaded into the Brainstorm database, export it to the Matlab workspace as `forward`. Save this variable to a file in the `anat_ref` folder.
+
+Using a forward model with anatomical data from another subject will make the identification of dipoles inside the brain fail.
+
+The original purpose of using two separate files is to consider multiple head models for the same subject, enabling the exploration of model misspecification: what if the true source is at the cortex, but a volume model is used? What if the true source was modeled using one grid, but the inverse solution was computed using a different grid?
+
+## Running
+
+(TODO) Continue documentation.

@@ -12,7 +12,7 @@ Furthermore, the methodology developed in my PhD dissertation can be extended to
 
 The interested reader may refer to [my dissertation](https://mavmatrix.uta.edu/math_dissertations/162/). 
 The presentation was recorded, and it is available [here](https://drive.google.com/file/d/1jC29LfYxnKniUrf4qTJaTYbJNPSoyBz7/view?usp=sharing); 
-the slides can be accessed (here)[https://drive.google.com/file/d/1jCc60A6hyuYjBBVgBPFIjxB2DwLOZxNE/view?usp=sharing].
+the slides can be accessed [here](https://drive.google.com/file/d/1jCc60A6hyuYjBBVgBPFIjxB2DwLOZxNE/view?usp=sharing).
 
 ## Algorithm Summary
 
@@ -24,7 +24,7 @@ _A grosso modo_, we construct the spatial priors based on observations from low-
 
 # Brainstorm Implementation
 
-(Brainstorm)[https://neuroimage.usc.edu/brainstorm/Introduction] is a Matlab toolbox for analyzing brain recordings, including, but not limited to, MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data and OPENMEEG for solving the forward problems of EEG vs. electrical dipoles.
+[Brainstorm](https://neuroimage.usc.edu/brainstorm/Introduction) is a Matlab toolbox for analyzing brain recordings, including, but not limited to, MEG, EEG, fNIRS, ECoG, etc. In the context of Electrical Source Imaging, Brainstorm offers integrations with state-of-the-art toolboxes such as CAT12 for processing anatomical MRI data and OPENMEEG for solving the forward problems of EEG vs. electrical dipoles.
 
 # Setup
 

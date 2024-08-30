@@ -38,7 +38,7 @@ To **install** the proposed algorithm into your local Brainstorm, do as follows:
 
 3. Download the file `process_(...).m` and move it to `~/.brainstorm/process`
 
-Notice that other algorithms are included in the `Brainstorm' folder. They were implemented to compare against the proposed method.
+Notice that other algorithms are included in the `Brainstorm` folder. They were implemented to compare against the proposed method.
 
 Now, to **use** the algorithm, you need data pre-processed to perform a Source Reconstruction. 
 This requires that the database contains the subject's anatomy data, sensor data, and electrode positions. 

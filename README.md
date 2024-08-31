@@ -52,9 +52,7 @@ The appropriate methods are beautifully explained in the [Brainstorm tutorials](
 
 Once the data is already in the database, the algorithms provided here can be run as follows:
 
-0. Start Brainstorm as usual.
-
-1. Select the sensor data and drag it to the `Run' section.
+1. Select the sensor data and drag it to the `Run` section.
 
 2. Select the `Run` button to open the Pipeline editor.
 

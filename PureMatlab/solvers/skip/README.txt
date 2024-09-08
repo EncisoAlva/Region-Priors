@@ -1,1 +1,0 @@
-This folder is to place solvers that are NOT to be computed for whatever reason.

@@ -2,7 +2,6 @@
 
 * [Introduction](https://github.com/EncisoAlva/Region-Priors?tab=readme-ov-file#introduction)
 * [Implementation in Brainstorm](https://github.com/EncisoAlva/Region-Priors?tab=readme-ov-file#brainstorm-implementation)
-* [Evaluation with synthetic data](https://github.com/EncisoAlva/Region-Priors?tab=readme-ov-file#performance-evaluation-with-synthetic-data)
 
 ## Introduction
 
@@ -83,83 +82,5 @@ The results will be saved to the database as any other Source Reconstruction met
 
 Double-click on it on the new file **and** the sensor data to explore visually the sources as they evolve in time.
 
-# Performance Evaluation with synthetic data
 
-Unlike the Brainstorm implementation, the performance metrics were not designed with the final user in mind. Instead, they are designed to make it easier to implement different types of synthetic data, hyperparameter tuning heuristics, ESI solvers, performance metrics, and posterior analysis.
-
-They are available to the public, hoping that future work can be implemented faster.
-
-## Setup
-
-1. Download the contents of the `Pure Matlab` folder. Although this folder can be renamed safely, it will be referred to as such for ease of notation.
-
-2. Inside the `Pure Matlab` folder, create a folder named `data`.
-
-3. Download the folder `anat_ref` from [this link](https://drive.google.com/drive/folders/1bwrJiAwzQgX9c09XAP01Bx7J5I7iN4oC?usp=sharing) and copy it inside the `Pure Matlab` folder. This folder was excluded from the repository because it included large files.
-
-### Custom anatomical data
-
-The folder `anat_ref` contains anatomical data from the ICBM152 template and two head models made from (1) sources at the cortex whose orientation is orthogonal to it and (2) approximately 5,000 dipoles on the brain volume with free orientation.
-
-- If you have anatomical data already loaded into the Brainstorm database, export the head and cortex surfaces to the Matlab workspace as `cortex` and `head`, respectively. Save both variables into a single file in the `anat_ref` folder.
-
-- If you have the head model already loaded into the Brainstorm database, export it to the Matlab workspace as `forward`. Save this variable to a file in the `anat_ref` folder.
-
-Using a forward model with anatomical data from another subject will make the identification of dipoles inside the brain fail.
-
-The original purpose of using two separate files is to consider multiple head models for the same subject, enabling the exploration of model misspecification: what if the true source is at the cortex, but a volume model is used? What if the true source was modeled using one grid, but the inverse solution was computed using a different grid?
-
-## Execution
-
-This set of scripts is designed to be modular and personalizable. 
-
-Interchange of data between functions is done using data structures (_structs_). The main structures are:
-* `info`: parameters for the whole simulation.
-* `meta`: data constant for each case. For example the SVD-decomposed leadfield matrix, the locations of distributed dipoles, the SNR level, etc.
-* `result`: data specific to each individual trial. For example the EEG data, the location of the true source patch, the true magnitudes of the distributed dipoles, etc.
-* `solution`: data specific for the estimated magnitudes of distributed dipoles. **This data is not saved to memory.**
-* `params`: parameters for each single solver, constant over each case. 
-* `checklist`: track of which estimators have been used over each trial.
-* `evaluation`: performance metrics, computed for each trial and estimator.
-
-Within this framework, the workflow occurs as follows:
-1. Open `~/scripts/run_all.m` and fill the relevant information to `info`. Then run.
-2. The function `~/scripts/generator.m` is called. 
-   * The excecution loops over source patch shape (`profile`), SNR level, and individual trials.
-   * A folder with the name on `info.tagName` is created on `~/data/`; inside of it, one folder level per each loop is created.
-   * The function on `info.ProtocolFun` is called to generate the synthetic data.
-   * The synthetic data (`result`) is saved to a file, using one file per each trial.
-   * The variables `params`, `checklist`, and `solution` are initialized and saved to file, using one file per each inner loop.
-3. The function `~/scripts/evaluator.m` is called. 
-   * The set of available source estimators is determined from the contents of the folder `~/solvers/`.
-     * Subroutines may be included in the folder `~/solvers/sub/`, these are loaded but not recognized as solvers.
-     * As a patch, I added the folder `~/solvers/skip/` to store solvers that are fully functional but I don't wan't to load.
-   * The set of available performance metrics is determined from the contents of the folder `~/metrics/`.
-     * The subfolders `~/metrics/sub/` and `~/metrics/skip/` are analogous as for the solvers.
-   * **For parameter tuning,** the excecution loops over estimator method (`solver`), source patch shape (`profile`), SNR level.
-     * For each file `ExampleSolver.m` on `~/solvers/`, there should be a file `ExampleSolver_tune.m` on `~/solvers/sub/`.
-     * The tuning function will select random trials to use for parameter tuning using generalized cross-validation, L-curve, U-curve, or CRESO criteria.
-     * Optimal parameters and other method-specific objects will be saved to `params`, using one file per each inner loop.
-     * **_This functionality will be updated on a near future._**
-   * The excecution loops over estimator method (`solver`), source patch shape (`profile`), SNR level, and individual trials.
-   * For each solver/trial combination, the function `solver.m` is called.
-   * The results are saved into `solution`, which is not saved to memory.
-   * The excecution now loops over each performance metric.
-     * The function `ExampleMetric.m` is called, and the result saved to the variable `evaluation`.
-     * As of now, only one number per each perfomance metric is allowed.
-   * After all performance metrics are evaluated on a single trial, the updated variable `evaluation` is saved to file. The variable `checklist` is also updated and saved to file.
-4. The function `~/scripts/collector.m` is called. 
-   * The excecution loops over estimator method (`solver`), source patch shape (`profile`), SNR level.
-   * The contents of `evaluation` are converted to a table. This table is saved in `~/stats/tables/` under the name in `info.tag Name`, the file format is cvs.
-
-The purpose of the checklist is to add robustness against interruptions in execution, especially unintentional ones. That is also the reason for a separate `collector` function.
-
-The collection of source estimator algorithms, perfomance metrics, and source patch protocols follow their description in my PhD dissertation, available
-[here](https://mavmatrix.uta.edu/math_dissertations/162/).
-Repating their description is quite wasteful, so the interested reader may refer to the original material.
-
-It is important to acknowledge that the collection of methods is quite small, yet functional. 
-The original scope was bigger, and a larger portion of it may be fullfilled in the future.
-
-
-**Last updated: Sep 05, 2024.**
+**Last updated: Sep 07, 2024.**
